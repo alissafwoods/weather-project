@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Report</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="card" style="width: 15rem">
+            <div class="card-body">
+              <p class="today-temperature">
+                <span id="current-temp">13°C</span>
+              </p>
+              <img
+                src="images/sunandcloudgrey.png"
+                class="card-img-top"
+                alt="Sun and cloud"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-9">
+          <h1>Ottawa</h1>
+          <h2></h2>
+          <h3>Monday 16:00</h3>
+          <br />
+          <h4>Partly cloudy</h4>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <p class="temperature">13° C</p>
+              <img
+                src="images/cloudgrey.png"
+                class="card-img-top"
+                alt="Cloud"
+              />
+              <p class="card-text">Tomorrow</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <p class="temperature">14° C</p>
+              <img
+                src="images/sunandcloudgrey.png"
+                class="card-img-top"
+                alt="Sun and cloud"
+              />
+              <p class="card-text">Tuesday</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <p class="temperature">18° C</p>
+              <img src="images/sungrey.png" class="card-img-top" alt="Sun" />
+              <p class="card-text">Wednesday</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <p class="temperature">18° C</p>
+              <img src="images/sungrey.png" class="card-img-top" alt="Sun" />
+              <p class="card-text">Thursday</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 10rem">
+            <div class="card-body">
+              <p class="temperature">15° C</p>
+              <img
+                src="images/raingrey.png"
+                class="card-img-top"
+                alt="Rain cloud"
+              />
+              <p class="card-text">Friday</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <form id="citySearch">
+        <label for="city"> Search for a city: </label>
+        <input type="text" id="city" />
+        <input type="submit" value="Submit" />
+      </form>
+      <br />
+      <button id="current-location-button">Current Location</button>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
