@@ -1,7 +1,5 @@
-// Week 4 Feature #1
-
 let now = new Date();
-let h3 = document.querySelector("h3");
+let date = document.querySelector("#date");
 let days = [
   "Sunday",
   "Monday",
@@ -20,23 +18,33 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-h3.innerHTML = `${day}    ${hours}:${minutes}`;
-
-// Week 5 Task
+date.innerHTML = `${day}    ${hours}:${minutes}`;
 
 function currentWeather(response) {
-  console.log(response.data);
-  document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector("#current-temp").innerHTML = `${Math.round(
-    response.data.main.temp
-  )}°C`;
-  document.querySelector("#conditions").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  let h1 = document.querySelector("h1");
+  let currentTemp = document.querySelector("#current-temp");
+  let conditions = document.querySelector("#conditions");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
+
+  h1.innerHTML = response.data.name;
+  currentTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  conditions.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = response.data.main.humidity;
+  wind.innerHTML = Math.round(response.data.wind.speed);
 }
+
+// document.querySelector("h1").innerHTML = response.data.name;
+// document.querySelector("#current-temp").innerHTML = `${Math.round(
+// response.data.main.temp
+// )}°C`;
+// document.querySelector("#conditions").innerHTML =
+// response.data.weather[0].description;
+// document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+// document.querySelector("#wind").innerHTML = Math.round(
+// response.data.wind.speed
+// );
+// }
 
 function searchCity(event) {
   event.preventDefault();

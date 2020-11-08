@@ -23,7 +23,7 @@ h1 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 ul {
@@ -35,6 +35,9 @@ li {
   font-family: "Bitter", serif;
   font-size: 15px;
   list-style: none;
+}
+
+li:first-letter {
   text-transform: capitalize;
 }
 p {
