@@ -30,7 +30,12 @@ function currentWeather(response) {
   document.querySelector("#current-temp").innerHTML = `${Math.round(
     response.data.main.temp
   )}°C`;
-  document.querySelector("h4").innerHTML = response.data.weather[0].description;
+  document.querySelector("#conditions").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function searchCity(event) {

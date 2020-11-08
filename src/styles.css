@@ -13,7 +13,6 @@
   padding: 3%;
 }
 h1,
-h2,
 h3,
 h4 {
   color: #989b99;
@@ -27,8 +26,15 @@ h3 {
   font-size: 20px;
 }
 
-h4 {
+ul {
+  padding: 0;
+}
+
+li {
+  color: #989b99;
+  font-family: "Bitter", serif;
   font-size: 15px;
+  list-style: none;
   text-transform: capitalize;
 }
 p {
@@ -58,6 +64,10 @@ p {
 .today-temperature {
   font-size: 30px;
   text-align: center;
+}
+
+.col {
+  padding: 1px 3px 1px 15px;
 }
 
 form {
