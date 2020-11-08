@@ -46,8 +46,8 @@
         </div>
         <br />
         <div class="row">
-          <div class="col">
-            <div class="card" style="width: 100px">
+          <div class="col-2">
+            <div class="card" //style="width:100px">
               <div class="card-body">
                 <p class="temperature">13° C</p>
                 <img
@@ -59,8 +59,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card" style="width: 100px">
+          <div class="col-2">
+            <div class="card" //style="width:100px">
               <div class="card-body">
                 <p class="temperature">14° C</p>
                 <img
@@ -72,8 +72,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card" style="width: 100px">
+          <div class="col-2">
+            <div class="card" //style="width:100px">
               <div class="card-body">
                 <p class="temperature">18° C</p>
                 <img src="images/sungrey.png" class="card-img-top" alt="Sun" />
@@ -81,8 +81,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card" style="width: 100px">
+          <div class="col-2">
+            <div class="card" //style="width:100px">
               <div class="card-body">
                 <p class="temperature">18° C</p>
                 <img src="images/sungrey.png" class="card-img-top" alt="Sun" />
@@ -90,8 +90,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card" style="width: 100px">
+          <div class="col-2">
+            <div class="card" //style="width:100px">
               <div class="card-body">
                 <p class="temperature">15° C</p>
                 <img
@@ -105,13 +105,18 @@
           </div>
         </div>
         <br />
-        <form id="citySearch">
-          <label for="city"> Search for a city: </label>
-          <input type="text" id="city" />
-          <input type="submit" value="Submit" />
-        </form>
-        <br />
-        <button id="current-location-button">Current Location</button>
+        <div class="row">
+          <div class="col-7">
+            <form id="citySearch">
+              <label for="city"> Search for a city: </label>
+              <input type="text" id="city" />
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+          <div class="col-5">
+            <button id="current-location-button">Current Location</button>
+          </div>
+        </div>
       </div>
       <p id="footer">
         <a

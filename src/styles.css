@@ -1,5 +1,5 @@
 .wrapper {
-  max-width: 800px;
+  max-width: 700px;
   padding: 3%;
 }
 
@@ -9,7 +9,7 @@
   border-style: solid;
   border-color: #c1c3c1;
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 700px;
   padding: 3%;
 }
 h1,
@@ -28,7 +28,7 @@ h3 {
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 15px;
   text-transform: capitalize;
 }
 p {
@@ -49,19 +49,21 @@ p {
   font-size: 14px;
   text-align: center;
 }
+
 .temperature {
   font-size: 20px;
   text-align: center;
   margin-bottom: 1px;
 }
 .today-temperature {
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
 }
+
 form {
   color: #989b99;
   font-family: "Bitter", serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: thin;
 }
 input,
@@ -81,6 +83,6 @@ button {
   border-radius: 4px;
   color: #989b99;
   font-family: "Bitter", serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: thin;
 }
