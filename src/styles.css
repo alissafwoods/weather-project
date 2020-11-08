@@ -1,9 +1,15 @@
+.wrapper {
+  max-width: 800px;
+  padding: 3%;
+}
+
 .container {
   background: #cfdcd4;
   border-radius: 4px;
   border-style: solid;
   border-color: #c1c3c1;
   margin: 20px auto;
+  max-width: 800px;
   padding: 3%;
 }
 h1,
@@ -14,48 +20,49 @@ h4 {
   font-family: "Bitter", serif;
 }
 h1 {
-  font-size: 50px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  margin-top: 30px;
+  letter-spacing: 2px;
 }
-h2 {
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: 3px;
+
+h3 {
+  font-size: 20px;
 }
+
 h4 {
+  font-size: 20px;
   text-transform: capitalize;
 }
 p {
   color: #989b99;
   font-family: monospace;
 }
+
+.card-body {
+  padding: 10px;
+}
+
 .card {
   background: #dfe9e2;
   border-color: #c1c3c1;
-  border-width: 4px;
-  margin-top: 30px;
+  border-width: 2px;
 }
 .card-text {
-  font-size: 20px;
+  font-size: 14px;
   text-align: center;
 }
 .temperature {
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
+  margin-bottom: 1px;
 }
 .today-temperature {
   font-size: 35px;
-  font-weight: bold;
   text-align: center;
 }
 form {
   color: #989b99;
   font-family: "Bitter", serif;
-  font-size: 23px;
+  font-size: 16px;
   font-weight: thin;
-  margin-top: 30px;
 }
 input,
 text {
@@ -74,11 +81,6 @@ button {
   border-radius: 4px;
   color: #989b99;
   font-family: "Bitter", serif;
-  font-size: 23px;
+  font-size: 16px;
   font-weight: thin;
-  margin-top: 30px;
-}
-
-#footer {
-  margin: 20px 155px;
 }
