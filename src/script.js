@@ -29,8 +29,10 @@ function currentWeather(response) {
   let currentIcon = document.querySelector("#current-icon");
   let code = response.data.weather[0].icon;
 
+  celsiusTemperature = response.data.main.temp;
+
   h1.innerHTML = response.data.name;
-  currentTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  currentTemp.innerHTML = `${Math.round(celsiusTemperature)}°C`;
   conditions.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
@@ -97,10 +99,31 @@ function handleSubmit(event) {
   search(city.value);
 }
 
-search("Vancouver");
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  currentTemperature.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temp");
+  currentTemperature.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+}
+
+let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#citySearch");
 searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Vancouver");
 
 // Week 5 Bonus Feature
 

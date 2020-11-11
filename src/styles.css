@@ -69,6 +69,11 @@ p {
   text-align: center;
 }
 
+#celsius-link,
+#fahrenheit-link {
+  font-size: 15px;
+}
+
 .col {
   padding: 1px 3px 1px 15px;
 }
