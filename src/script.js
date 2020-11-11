@@ -85,17 +85,22 @@ function currentWeather(response) {
 // );
 // }
 
-function searchCity(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "e557d742ef6457c9163f2c8c41a40455";
-  let city = document.querySelector("#city").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(currentWeather);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  search(city.value);
+}
+
+search("Vancouver");
+
 let searchForm = document.querySelector("#citySearch");
-searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("submit", handleSubmit);
 
 // Week 5 Bonus Feature
 
