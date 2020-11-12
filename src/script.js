@@ -1,24 +1,66 @@
-let now = new Date();
-let date = document.querySelector("#date");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+function formatDate(timestamp) {
+  //let now = new Date();
+  //let date = document.querySelector("#date");
+  let date = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${formatHours(timestamp)}`;
+  //let hours = date.getHours();
+  //if (hours < 10) {
+  //hours = `0${hours}`;
+  //}
+  //let minutes = now.getMinutes();
+  //if (minutes < 10) {
+  //minutes = `0${minutes}`;
+  //}
+
+  //date.innerHTML = `${day}    ${hours}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
 }
-date.innerHTML = `${day}    ${hours}:${minutes}`;
+
+//function formatHours(timestamp) {
+//let date = document.querySelector("#date");
+//let days = [
+//"Sunday",
+//"Monday",
+//"Tuesday",
+//"Wednesday",
+//"Thursday",
+//"Friday",
+//"Saturday",
+//];
+//let day = days[now.getDay()];
+//let hours = now.getHours();
+//if (hours < 10) {
+//hours = `0${hours}`;
+//}
+//let minutes = now.getMinutes();
+//if (minutes < 10) {
+//minutes = `0${minutes}`;
+
+//return `${hours}:${minutes}`;
+//}
 
 function currentWeather(response) {
   let h1 = document.querySelector("h1");
@@ -28,10 +70,12 @@ function currentWeather(response) {
   let wind = document.querySelector("#wind");
   let currentIcon = document.querySelector("#current-icon");
   let code = response.data.weather[0].icon;
+  let date = document.querySelector("#date");
 
   celsiusTemperature = response.data.main.temp;
 
   h1.innerHTML = response.data.name;
+  date.innerHTML = formatDate(response.data.dt * 1000);
   currentTemp.innerHTML = `${Math.round(celsiusTemperature)}°C`;
   conditions.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
@@ -87,10 +131,39 @@ function currentWeather(response) {
 // );
 // }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col" id="forecast">
+            <div class="card">
+              <div class="card-body">
+                <p class="time">${formatHours(forecast.dt * 1000)}</p>
+                <img
+                  src="images/cloudgrey.png"
+                  class="card-img-top"
+                  alt="Cloud"
+                />
+                <p class="card-text">${Math.round(
+                  forecast.main.temp_max
+                )}° | ${Math.round(forecast.main.temp_min)}°</p>
+              </div>
+            </div>
+          </div>
+          </div>`;
+  }
+}
+
 function search(city) {
   let apiKey = "e557d742ef6457c9163f2c8c41a40455";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(currentWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
