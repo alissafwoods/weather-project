@@ -143,9 +143,9 @@ function displayForecast(response) {
               <div class="card-body">
                 <p class="time">${formatHours(forecast.dt * 1000)}</p>
                 <img
-                  src="images/cloudgrey.png"
+                  src="images/${forecast.weather[0].icon}.png"
                   class="card-img-top"
-                  alt="Cloud"
+                  alt=""
                 />
                 <p class="card-text">${Math.round(
                   forecast.main.temp_max
