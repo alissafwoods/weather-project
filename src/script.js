@@ -81,41 +81,41 @@ function currentWeather(response) {
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
   if (code === "01d") {
-    currentIcon.setAttribute("src", "images/sungrey.png");
+    currentIcon.setAttribute("src", "images/01d.png");
   } else if (code === "01n") {
-    currentIcon.setAttribute("src", "images/moongrey.png");
+    currentIcon.setAttribute("src", "images/01n.png");
   } else if (code === "02d") {
-    currentIcon.setAttribute("src", "images/sunandcloudgrey.png");
+    currentIcon.setAttribute("src", "images/02d.png");
   } else if (code === "02n") {
-    currentIcon.setAttribute("src", "images/moonandcloudgrey.png");
+    currentIcon.setAttribute("src", "images/02n.png");
   } else if (code === "03d") {
-    currentIcon.setAttribute("src", "images/cloudgrey.png");
+    currentIcon.setAttribute("src", "images/03d.png");
   } else if (code === "03n") {
-    currentIcon.setAttribute("src", "images/cloudgrey.png");
+    currentIcon.setAttribute("src", "images/03n.png");
   } else if (code === "04d") {
-    currentIcon.setAttribute("src", "images/cloudsgrey.png");
+    currentIcon.setAttribute("src", "images/04d.png");
   } else if (code === "04n") {
-    currentIcon.setAttribute("src", "images/cloudsgrey.png");
+    currentIcon.setAttribute("src", "images/04n.png");
   } else if (code === "09d") {
-    currentIcon.setAttribute("src", "images/raingrey.png");
+    currentIcon.setAttribute("src", "images/09d.png");
   } else if (code === "09n") {
-    currentIcon.setAttribute("src", "images/raingrey.png");
+    currentIcon.setAttribute("src", "images/09n.png");
   } else if (code === "10d") {
-    currentIcon.setAttribute("src", "images/raingrey.png");
+    currentIcon.setAttribute("src", "images/10d.png");
   } else if (code === "10n") {
-    currentIcon.setAttribute("src", "images/raingrey.png");
+    currentIcon.setAttribute("src", "images/10n.png");
   } else if (code === "11d") {
-    currentIcon.setAttribute("src", "images/thundergrey.png");
+    currentIcon.setAttribute("src", "images/11d.png");
   } else if (code === "11n") {
-    currentIcon.setAttribute("src", "images/thundergrey.png");
+    currentIcon.setAttribute("src", "images/11n.png");
   } else if (code === "13d") {
-    currentIcon.setAttribute("src", "images/snowgrey.png");
+    currentIcon.setAttribute("src", "images/13d.png");
   } else if (code === "13n") {
-    currentIcon.setAttribute("src", "images/snowgrey.png");
+    currentIcon.setAttribute("src", "images/13n.png");
   } else if (code === "50d") {
-    currentIcon.setAttribute("src", "images/cloudgrey.png");
+    currentIcon.setAttribute("src", "images/50d.png");
   } else if (code === "50n") {
-    currentIcon.setAttribute("src", "images/cloudgrey.png");
+    currentIcon.setAttribute("src", "images/50n.png");
   }
 }
 
