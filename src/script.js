@@ -1,6 +1,4 @@
 function formatDate(timestamp) {
-  //let now = new Date();
-  //let date = document.querySelector("#date");
   let date = new Date(timestamp);
   let days = [
     "Sunday",
@@ -13,16 +11,6 @@ function formatDate(timestamp) {
   ];
   let day = days[date.getDay()];
   return `${day} ${formatHours(timestamp)}`;
-  //let hours = date.getHours();
-  //if (hours < 10) {
-  //hours = `0${hours}`;
-  //}
-  //let minutes = now.getMinutes();
-  //if (minutes < 10) {
-  //minutes = `0${minutes}`;
-  //}
-
-  //date.innerHTML = `${day}    ${hours}:${minutes}`;
 }
 
 function formatHours(timestamp) {
@@ -38,29 +26,6 @@ function formatHours(timestamp) {
 
   return `${hours}:${minutes}`;
 }
-
-//function formatHours(timestamp) {
-//let date = document.querySelector("#date");
-//let days = [
-//"Sunday",
-//"Monday",
-//"Tuesday",
-//"Wednesday",
-//"Thursday",
-//"Friday",
-//"Saturday",
-//];
-//let day = days[now.getDay()];
-//let hours = now.getHours();
-//if (hours < 10) {
-//hours = `0${hours}`;
-//}
-//let minutes = now.getMinutes();
-//if (minutes < 10) {
-//minutes = `0${minutes}`;
-
-//return `${hours}:${minutes}`;
-//}
 
 function currentWeather(response) {
   let h1 = document.querySelector("h1");
@@ -118,18 +83,6 @@ function currentWeather(response) {
     currentIcon.setAttribute("src", "images/50n.png");
   }
 }
-
-// document.querySelector("h1").innerHTML = response.data.name;
-// document.querySelector("#current-temp").innerHTML = `${Math.round(
-// response.data.main.temp
-// )}°C`;
-// document.querySelector("#conditions").innerHTML =
-// response.data.weather[0].description;
-// document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-// document.querySelector("#wind").innerHTML = Math.round(
-// response.data.wind.speed
-// );
-// }
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
